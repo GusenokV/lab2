@@ -84,7 +84,7 @@ public class TextProcessor {
             throw new IllegalStateException("No words found in the provided text.");
         }
 
-        // Insertion sort — stable, O(n²); sufficient for typical text lengths
+        // Insertion sort;
         for (int i = 1; i < words.length; i++) {
             StringBuilder key = words[i];
             int keyCount = countOccurrences(key, symbol);
@@ -95,8 +95,6 @@ public class TextProcessor {
             }
             words[j + 1] = key;
         }
-
-        // Build result — conversion to String happens only during output
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < words.length; i++) {
             result.append(words[i]);
